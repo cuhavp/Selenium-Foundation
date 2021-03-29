@@ -1,0 +1,12 @@
+<suite name="demo">
+    <test name="testNG">
+      <classes>
+            <class name="modules.TestNgExample"/>
+            <class name="modules.TestNgExample"/>
+            <class name="modules.TestNgExample"/>
+            <class name="modules.TestNgExample"/>
+            <class name="modules.TestNgExample"/>
+            <class name="modules.TestNgExample"/>
+      </classes>
+    </test>
+</suite>
