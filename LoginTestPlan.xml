@@ -1,0 +1,16 @@
+<suite name="Login">
+    <test name="cross browser - firefox">
+        <parameter name="browser" value="firefox"/>
+
+        <classes>
+            <class name="modules.LoginTest"/>
+        </classes>
+    </test>
+    <test name="cross browser - chrome">
+        <parameter name="browser" value="chrome"/>
+        <classes>
+            <class name="modules.LoginTest"/>
+        </classes>
+    </test>
+
+</suite>

@@ -1,0 +1,7 @@
+<suite name="regression">
+    <test name="all tests">
+        <packages>
+            <package name="modules"/>
+        </packages>
+    </test>
+</suite>

@@ -22,15 +22,20 @@ public class TestNgExample {
     void beforeMethod(){
         System.out.println("before method");
     }
-    @Test
+
+
+    @Test(groups = {"smoke-test"})
     void tc01(){
         System.out.println("tc01");
     }
+
     @Test
     void tc02(){
         System.out.println("tc02");
     }
-    @Test
+
+
+    @Test(groups = {"smoke-test"})
     void tc03(){
         System.out.println("tc03");
     }

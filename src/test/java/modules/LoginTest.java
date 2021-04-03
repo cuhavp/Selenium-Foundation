@@ -1,15 +1,39 @@
 package modules;
 
+import io.github.bonigarcia.wdm.WebDriverManager;
 import org.jsoup.Connection;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.Assert;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 import pages.LoginPage;
 
-public class LoginTest extends BaseTest {
+public class LoginTest {
+    protected static WebDriver driver;
+
+    @Parameters({"browser"})
+    @BeforeClass
+    static void setup(String browser) {
+
+        if(browser.equalsIgnoreCase("chrome")){
+            WebDriverManager.chromedriver().setup();
+            driver = new ChromeDriver();
+        }else if(browser.equalsIgnoreCase("firefox")){
+            WebDriverManager.firefoxdriver().setup();
+            driver = new FirefoxDriver();
+        }else {
+            throw  new IllegalArgumentException("The browser "+browser+" dose not support yet!!");
+        }
+
+    }
+
+    @AfterClass
+    static void tearDown() {
+        driver.quit();
+    }
 
     @DataProvider
     static Object[][] credentials(){
