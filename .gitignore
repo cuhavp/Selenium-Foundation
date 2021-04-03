@@ -1,1 +1,4 @@
 /.sensei/
+/.idea/
+/target/
+/*.iml

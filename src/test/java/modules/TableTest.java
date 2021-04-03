@@ -17,7 +17,7 @@ public class TableTest extends BaseTest {
     @Test
     void minimumDuePerson() {
         TablePage tablePage = new TablePage(driver);
-
+        tablePage.open();
         List<String> minDuePersons = tablePage.persons
                 .stream()
                 .filter(person -> person.getDue() == tablePage.getMinDue())
@@ -33,6 +33,7 @@ public class TableTest extends BaseTest {
     @Test
     void maximumDuePerson() {
         TablePage tablePage = new TablePage(driver);
+        tablePage.open();
         Person maxDuePerson = tablePage.persons
                 .stream()
                 .max(Comparator.comparing(Person::getDue))

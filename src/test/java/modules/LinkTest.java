@@ -24,6 +24,7 @@ public class LinkTest extends BaseTest{
     @Test(dataProvider = "pages")
     static void navigateToPage(String name,String expected) {
         HyperLinkPage hyperLinkPage = new HyperLinkPage(driver);
+        hyperLinkPage.open();
         hyperLinkPage.clickOnText(name);
         Assert.assertTrue(driver.getCurrentUrl().contains(expected));
         hyperLinkPage.clickOnText("here");

@@ -1,17 +1,14 @@
 package modules;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 public class FrameTest extends BaseTest{
 
     @Test
     static void checkInnerText(){
+        driver.get("https://the-internet.herokuapp.com/nested_frames");
         driver.switchTo().frame("frame-top");
         driver.switchTo().frame(0);
         driver.switchTo().frame(driver.findElement(By.name("frame-top")));
@@ -20,7 +17,6 @@ public class FrameTest extends BaseTest{
         Assert.assertTrue(driver.findElement(By.xpath("html/body")).getText().contains("LEFT")
                 ,driver.findElement(By.xpath("html/body")).getText()
         );
-
 
         driver.switchTo().parentFrame(); // you are in top frame
 
