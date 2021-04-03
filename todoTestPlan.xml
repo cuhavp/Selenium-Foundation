@@ -1,0 +1,7 @@
+<suite name="MVC">
+    <test name="TODO Test">
+      <classes>
+            <class name="modules.TodoTest"/>
+      </classes>
+    </test>
+</suite>

@@ -31,19 +31,4 @@ public class TodoTest extends BaseTest {
         Assert.assertEquals(itemLeftAfter - itemLeftBefore, -1);
 
     }
-
-    @Test
-    void markTodoComplete()  {
-        ToDoPage toDoPage = new ToDoPage(driver);
-        toDoPage.open();
-
-
-        toDoPage.addNew("task 1");
-        int itemLeftBefore = toDoPage.getItemsLeft();
-
-        toDoPage.markDoneTodo("task 1");
-        int itemLeftAfter = toDoPage.getItemsLeft();
-        Assert.assertEquals(itemLeftAfter - itemLeftBefore, -1);
-
-    }
 }
