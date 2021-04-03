@@ -13,7 +13,6 @@ import org.testng.annotations.Test;
 import pages.JsAlertPage;
 
 public class JsAlertTest extends BaseTest {
-    src/test/java/modules/JsAlertTest.java
     @Test
     static void clickForJsAlert() {
         JsAlertPage jsAlertPage = new JsAlertPage(driver);
